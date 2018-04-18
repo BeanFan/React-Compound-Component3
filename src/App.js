@@ -24,11 +24,10 @@ class RadioGroup extends Component {
 
   render() {
     const activeIndex = this.state.activeIndex;
-    const setActiveIndex = this.setActiveIndex;
     let children = React.Children.map(this.props.children, (child, index) => {
       return React.cloneElement(child, {
         isActive: index === activeIndex,
-        onchangeButton: () => setActiveIndex(index)
+        onchangeButton: () => this.setActiveIndex(index)
       });
     });
 
